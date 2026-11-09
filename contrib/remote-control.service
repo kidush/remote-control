@@ -1,0 +1,13 @@
+[Unit]
+Description=Remote control daemon (IR air conditioner via Tuya)
+Documentation=https://github.com/kidush/remote-control
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=%h/.local/bin/rc daemon
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

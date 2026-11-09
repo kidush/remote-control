@@ -1,0 +1,22 @@
+# ~/.config/remote-control/config.toml
+# Devices and presets. Safe to keep in dotfiles: secrets go in credentials.toml.
+# Restart the daemon after editing: systemctl --user restart remote-control
+
+[[devices]]
+id = "ac"                 # used on the command line: rc ac on
+name = "Air conditioner"  # shown in the bar popup
+min_temp = 16
+max_temp = 30
+
+[[devices.presets]]
+name = "Sleep"
+mode = "cool"             # cool | heat | dry | fan | auto
+temp = 24
+fan = "low"               # auto | low | mid | high
+swing = false             # ignored by backends without swing
+
+[[devices.presets]]
+name = "Quick cool"
+mode = "cool"
+temp = 18
+fan = "high"
